@@ -1,5 +1,4 @@
-﻿// DÜZELTİLMİŞ FİNAL SÜRÜM - ChatServer/Program.cs
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -55,8 +54,7 @@ namespace ChatServer
                     string fullMessage = Encoding.UTF8.GetString(buffer, 0, byteCount);
                     Console.WriteLine($"Gelen Mesaj ({username}): {fullMessage}");
 
-                    // -----------> İŞTE DÜZELTME BURADA! <-----------
-                    // Gelen mesaj "KullanıcıAdı: mesaj" formatında. Biz sadece mesaj kısmını kontrol etmeliyiz.
+                   
                     int separatorIndex = fullMessage.IndexOf(": ");
                     string actualMessage = (separatorIndex > -1) ? fullMessage.Substring(separatorIndex + 2) : fullMessage;
 
